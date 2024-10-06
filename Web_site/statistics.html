@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>Statistics</title>
+  </head>
+  <body>
+    <p>
+      <a href="index.html">Полезные ископаемые</a><br>
+      <a href="statistics.html">Список разных ископаемых</a>
+    </p>
+    <hr>
+    <form>
+      <details>
+        <summary>График</summary>
+        <table cellspacing="5">
+          <tr>
+            <th>Значение по оси OX</th>
+            <th>Результат</th>
+          </tr>
+          <tr>
+            <td>
+              <input type="radio" name="axe_OX">Страна добычи<br>
+              <input type="radio" name="axe_OX">Агрегатное состояние<br>
+            </td>
+            <td>
+              <input type="checkbox" name="result">Плотность<br>
+              <input type="checkbox" name="result">Теплопроводность<br>
+              <input type="checkbox" name="result">Электропроводность<br>
+            </td>
+          </tr>
+        </table>
+        <input type="submit" value="Построить">
+      </details>
+    </form>
+    <form>
+      <details>
+        <summary>Фильтр</summary>
+        <label for="name">Название:</label>
+        <input type="text" id="name">
+        <br>
+        <label for="aggregation">Агрегатное состояние:</label>
+        <select id="aggregation">
+          <option value="0" selected>Не выбрано</option>
+          <option value="1">Твердое</option>
+          <option value="2">Жидкое</option>
+          <option value="3">Газообразное</option>
+        </select>
+        <br>
+        <label for="density">Плотность (г/см³):</label>
+        От <input type="number" id="density"> до <input type="number" name="density">
+        <br>
+        <label for="thermal_conductivity">Теплопроводность (Вт/(м·К)):</label>
+        От <input type="number" id="thermal_conductivity"> до <input type="number" name="thermal_conductivity">
+        <br>
+        <label for="electrical_conductivity">Электропроводность (См/м):</label>
+        От <input type="number" id="electrical_conductivity"> до <input type="number" name="electrical_conductivity">
+        <br>
+        <label for="flammability">Горючесть:</label>
+        <select id="flammability">
+          <option value="0" selected>Не выбрано</option>
+          <option value="1">Горючее</option>
+          <option value="2">Негорючее</option>
+        </select>
+        <br>
+        <label for="country">Страна добычи:</label>
+        <input type="text" id="country">
+        <input type="submit" id="seacrh" value="Найти">
+      </details>
+    </form>
+    <form>
+      <details>
+        <summary>Сортировка</summary>
+        <label for="fst_level">Первый уровень:</label>
+        <select id="fst_level">
+          <option value="0">Агрегатное состояние</option>
+          <option value="1">Плотность</option>
+          <option value="2">Теплопроводность</option>
+          <option value="3">Электропроводность</option>
+          <option value="4">Горючесть</option>
+          <option value="5">Страна</option>
+          <option value="6" selected>Нет</option>
+        </select>
+        по убыванию? <input type="checkbox" name="fst_chek">
+        <br>
+        <label for="sec_level">Второй уровень:</label>
+        <select id="sec_level">
+          <option value="0">Агрегатное состояние</option>
+          <option value="1">Плотность</option>
+          <option value="2">Теплопроводность</option>
+          <option value="3">Электропроводность</option>
+          <option value="4">Горючесть</option>
+          <option value="5">Страна</option>
+          <option value="6" selected>Нет</option>
+        </select>
+        по убыванию? <input type="checkbox" name="sec_chek">
+        <br>
+        <label for="thd_level">Третий уровень:</label>
+        <select id="thd_level">
+          <option value="0">Агрегатное состояние</option>
+          <option value="1">Плотность</option>
+          <option value="2">Теплопроводность</option>
+          <option value="3">Электропроводность</option>
+          <option value="4">Горючесть</option>
+          <option value="5">Страна</option>
+          <option value="6" selected>Нет</option>
+        </select>
+        по убыванию? <input type="checkbox" name="thd_chek"><br>
+        <input type="submit" name="sort" value="Сортировать">
+      </details>
+    </form>
+    <p></p>
+    <div>
+      <table border="1" cellspacing="0">
+        <tr>
+          <th>Название</th>
+          <th>Агрегатное состояние</th>
+          <th>Плотность (г/см³)</th>
+          <th>Теплопроводность (Вт/(м·К))</th>
+          <th>Электропроводность (См/м)</th>
+          <th>Горючесть</th>
+          <th>Страна добычи</th>
+        </tr>
+        <tr>
+          <td>Нефть</td>
+          <td>Жидкое</td>
+          <td>0.85</td>
+          <td>0.15</td>
+          <td>0.001</td>
+          <td>Горючее</td>
+          <td>Саудовская Аравия</td>
+        </tr>
+        <tr>
+          <td>Природный газ</td>
+          <td>Газообразное</td>
+          <td>0.0008</td>
+          <td>0.03</td>
+          <td>0.0006</td>
+          <td>Горючее</td>
+          <td>Россия</td>
+        </tr>
+        <tr>
+          <td>Уголь</td>
+          <td>Твердое</td>
+          <td>1.3</td>
+          <td>0.20</td>
+          <td>0.0001</td>
+          <td>Горючее</td>
+          <td>Китай</td>
+        </tr>
+        <tr>
+          <td>Железная руда</td>
+          <td>Твердое</td>
+          <td>5.0</td>
+          <td>80</td>
+          <td>1.0</td>
+          <td>Негорючее</td>
+          <td>Австралия</td>
+        </tr>
+        <tr>
+          <td>Медь</td>
+          <td>Твердое</td>
+          <td>8.96</td>
+          <td>400</td>
+          <td>5.96</td>
+          <td>Негорючее</td>
+          <td>Чили</td>
+        </tr>
+        <tr>
+          <td>Золото</td>
+          <td>Твердое</td>
+          <td>19.3</td>
+          <td>318</td>
+          <td>45.2</td>
+          <td>Негорючее</td>
+          <td>Канада</td>
+        </tr>
+        <tr>
+          <td>Алмаз</td>
+          <td>Твердое</td>
+          <td>3.51</td>
+          <td>1000</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Ботсвана</td>
+        </tr>
+        <tr>
+          <td>Платина</td>
+          <td>Твердое</td>
+          <td>21.45</td>
+          <td>72</td>
+          <td>10</td>
+          <td>Негорючее</td>
+          <td>Россия</td>
+        </tr>
+        <tr>
+          <td>Никель</td>
+          <td>Твердое</td>
+          <td>8.9</td>
+          <td>90</td>
+          <td>14.3</td>
+          <td>Негорючее</td>
+          <td>Филиппины</td>
+        </tr>
+        <tr>
+          <td>Свинец</td>
+          <td>Твердое</td>
+          <td>11.34</td>
+          <td>35</td>
+          <td>4.8</td>
+          <td>Негорючее</td>
+          <td>Китай</td>
+        </tr>
+        <tr>
+          <td>Боксит</td>
+          <td>Твердое</td>
+          <td>2.55</td>
+          <td>30</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Австралия</td>
+        </tr>
+        <tr>
+          <td>Алюминий</td>
+          <td>Твердое</td>
+          <td>2.7</td>
+          <td>235</td>
+          <td>3.77</td>
+          <td>Негорючее</td>
+          <td>Китай</td>
+        </tr>
+        <tr>
+          <td>Уран</td>
+          <td>Твердое</td>
+          <td>18.95</td>
+          <td>27</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Казахстан</td>
+        </tr>
+        <tr>
+          <td>Сера</td>
+          <td>Твердое</td>
+          <td>2.07</td>
+          <td>0.205</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>США</td>
+        </tr>
+        <tr>
+          <td>Цинк</td>
+          <td>Твердое</td>
+          <td>7.14</td>
+          <td>116</td>
+          <td>1.7</td>
+          <td>Негорючее</td>
+          <td>Китай</td>
+        </tr>
+        <tr>
+          <td>Титан</td>
+          <td>Твердое</td>
+          <td>4.51</td>
+          <td>22</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Австралия</td>
+        </tr>
+        <tr>
+          <td>Олово</td>
+          <td>Твердое</td>
+          <td>7.28</td>
+          <td>67</td>
+          <td>9.17</td>
+          <td>Негорючее</td>
+          <td>Китай</td>
+        </tr>
+        <tr>
+          <td>Кобальт</td>
+          <td>Твердое</td>
+          <td>8.9</td>
+          <td>100</td>
+          <td>6.7</td>
+          <td>Негорючее</td>
+          <td>Конго</td>
+        </tr>
+        <tr>
+          <td>Гранит</td>
+          <td>Твердое</td>
+          <td>2.75</td>
+          <td>1.7</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Индия</td>
+        </tr>
+        <tr>
+          <td>Мрамор</td>
+          <td>Твердое</td>
+          <td>2.71</td>
+          <td>2.1</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Италия</td>
+        </tr>
+        <tr>
+          <td>Глина</td>
+          <td>Твердое</td>
+          <td>1.6</td>
+          <td>0.25</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Китай</td>
+        </tr>
+        <tr>
+          <td>Песок</td>
+          <td>Твердое</td>
+          <td>1.6</td>
+          <td>0.33</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>США</td>
+        </tr>
+        <tr>
+          <td>Фосфорит</td>
+          <td>Твердое</td>
+          <td>2.8</td>
+          <td>0</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Марокко</td>
+        </tr>
+        <tr>
+          <td>Вольфрам</td>
+          <td>Твердое</td>
+          <td>19.3</td>
+          <td>170</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Китай</td>
+        </tr>
+        <tr>
+          <td>Калийная соль</td>
+          <td>Твердое</td>
+          <td>2.0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Канада</td>
+        </tr>
+        <tr>
+          <td>Известняк</td>
+          <td>Твердое</td>
+          <td>2.7</td>
+          <td>1.26</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>США</td>
+        </tr>
+        <tr>
+          <td>Цирконий</td>
+          <td>Твердое</td>
+          <td>6.52</td>
+          <td>22</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Австралия</td>
+        </tr>
+        <tr>
+          <td>Магний</td>
+          <td>Твердое</td>
+          <td>1.74</td>
+          <td>160</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Китай</td>
+        </tr>
+        <tr>
+          <td>Кварц</td>
+          <td>Твердое</td>
+          <td>2.65</td>
+          <td>1.3</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Бразилия</td>
+        </tr>
+        <tr>
+          <td>Ртуть</td>
+          <td>Жидкое</td>
+          <td>13.53</td>
+          <td>8.34</td>
+          <td>1</td>
+          <td>Негорючее</td>
+          <td>Китай</td>
+        </tr>
+        <tr>
+          <td>Калий</td>
+          <td>Твердое</td>
+          <td>0.86</td>
+          <td>102.4</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Канада</td>
+        </tr>
+        <tr>
+          <td>Селен</td>
+          <td>Твердое</td>
+          <td>4.81</td>
+          <td>0.5</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Китай</td>
+        </tr>
+        <tr>
+          <td>Барит</td>
+          <td>Твердое</td>
+          <td>4.5</td>
+          <td>1.3</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Китай</td>
+        </tr>
+        <tr>
+          <td>Флюорит</td>
+          <td>Твердое</td>
+          <td>3.18</td>
+          <td>1.1</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Китай</td>
+        </tr>
+        <tr>
+          <td>Гипс</td>
+          <td>Твердое</td>
+          <td>2.32</td>
+          <td>1.0</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>США</td>
+        </tr>
+        <tr>
+          <td>Слюда</td>
+          <td>Твердое</td>
+          <td>2.8</td>
+          <td>0.52</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Индия</td>
+        </tr>
+        <tr>
+          <td>Бор</td>
+          <td>Твердое</td>
+          <td>2.34</td>
+          <td>27</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Турция</td>
+        </tr>
+        <tr>
+          <td>Ильменит</td>
+          <td>Твердое</td>
+          <td>4.7</td>
+          <td>10</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Австралия</td>
+        </tr>
+        <tr>
+          <td>Молибден</td>
+          <td>Твердое</td>
+          <td>10.2</td>
+          <td>138</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Китай</td>
+        </tr>
+        <tr>
+          <td>Рений</td>
+          <td>Твердое</td>
+          <td>21.02</td>
+          <td>48</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Чили</td>
+        </tr>
+        <tr>
+          <td>Галлий</td>
+          <td>Твердое</td>
+          <td>5.91</td>
+          <td>29.4</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Китай</td>
+        </tr>
+        <tr>
+          <td>Литий</td>
+          <td>Твердое</td>
+          <td>0.53</td>
+          <td>84.8</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Австралия</td>
+        </tr>
+        <tr>
+          <td>Гематит</td>
+          <td>Твердое</td>
+          <td>5.26</td>
+          <td>11</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Бразилия</td>
+        </tr>
+        <tr>
+          <td>Пирит</td>
+          <td>Твердое</td>
+          <td>5.01</td>
+          <td>30</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Испания</td>
+        </tr>
+        <tr>
+          <td>Халькопирит</td>
+          <td>Твердое</td>
+          <td>4.2</td>
+          <td>17</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Канада</td>
+        </tr>
+        <tr>
+          <td>Киноварь</td>
+          <td>Твердое</td>
+          <td>8.1</td>
+          <td>0.2</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Китай</td>
+        </tr>
+        <tr>
+          <td>Маг0ит</td>
+          <td>Твердое</td>
+          <td>5.2</td>
+          <td>5.2</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Россия</td>
+        </tr>
+        <tr>
+          <td>Кальцит</td>
+          <td>Твердое</td>
+          <td>2.71</td>
+          <td>3.59</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>США</td>
+        </tr>
+        <tr>
+          <td>Азурит</td>
+          <td>Твердое</td>
+          <td>3.77</td>
+          <td>0</td>
+          <td>0</td>
+          <td>Негорючее</td>
+          <td>Марокко</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
