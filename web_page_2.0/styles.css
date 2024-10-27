@@ -1,0 +1,233 @@
+.container {
+    display: grid;
+    grid-template-rows: 100px;
+    grid-template-columns: 1fr;
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 20px;
+    border: solid thin black;
+}
+
+.header-nav-wrapper {
+    display: flex;
+    align-items: flex-end;
+    padding: 0 20px;
+}
+
+header {
+    width: 40%;
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24px;
+    background-color: lightgray;
+}
+
+nav.menu {
+    display: flex;
+    width: 65%;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 10px 0;
+    background-color: lightgray;
+}
+
+nav.menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 5px 15px;
+}
+
+nav.menu a.active {
+    color: red;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 2px;
+}
+
+.gallery div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-size: 1.2em;
+}
+
+.gallery div > img {
+    width: 100%;
+    height: 100%;
+}
+
+.logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.logos .logo-item {
+    text-align: center;
+}
+
+.logos .logo-item .circle-img {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.logos .logo-item:nth-child(1) .circle-img > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.logos .logo-item:nth-child(2) .circle-img > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.logos .logo-item:nth-child(3) .circle-img > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.circle-img > .logos-text {
+    font-size: 24px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+.content > div.text.pic {
+    width: 70%;
+    font-size: 18px;
+}
+
+.content > div.text {
+    width: 100%;
+    font-size: 18px;
+}
+
+div.text > .headline {
+    text-align: center;
+    margin: auto;
+    width: 60%;
+    padding: 20px 0;
+    font-size: 32px;
+}
+
+.img-box {
+    float: right;
+    overflow: hidden;
+    margin-left: 10px;
+    margin-top: 8%;
+}
+
+.img-box > img {
+    width: 100%;
+    max-height: 204px;
+    height: 100%;
+}
+
+footer {
+    background-color: grey;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .info {
+    font-size: 12px;
+}
+
+@media all and (max-width: 600px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .header-nav-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header {
+        width: 100%;
+        padding: 10px;
+        font-size: 28px;
+        font-weight: bold;
+        justify-content: center;
+    }
+
+    nav.menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        width: 100%;
+        justify-content: center;
+        padding: 10px 10px;
+    }
+
+    nav.menu a {
+        font-size: 20px;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px 15%;
+    }
+
+    .logos {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .content {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .content > div.text.pic, .content > div.text {
+        width: 100%;
+        text-align: justify;
+    }
+
+    .img-box {
+        margin: 20px 0 0 0;
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .img-box > img {
+        width: 40%;
+        min-width: 145px;
+        min-height: 145px;
+    }
+}
