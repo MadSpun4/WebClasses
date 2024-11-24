@@ -1,0 +1,14 @@
+.text-justify {
+    text-align: justify;
+}
+
+.text-end {
+    justify-content: right;
+}
+
+@media (max-width: 768px) {
+    .w-sm-80 {
+        width: 80%;
+    }
+    
+}

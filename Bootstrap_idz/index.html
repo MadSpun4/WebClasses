@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Проверочная работа Bootstrap</title>
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+
+<body>
+    <div class="container my-4 border">
+
+        <header>
+            <nav class="navbar navbar-expand-md bg-light navbar-light px-3">
+                <a class="navbar-brand" hred="#">Полезные ископаемые</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse text-end me-auto" id="menu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Галлерея</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Список ранзных ископаемых</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        <div class="container my-3">
+            <div class="row g-3">
+                <div class="col-md-4 col-12">
+                    <div class="bg-image hover-zoom">
+                        <img src="images/emerald.jpg" class="img-fluid w-100 rounded-9" alt="Изумруд">
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="bg-image hover-zoom">
+                        <img src="images/gas.jpg" class="img-fluid w-100 rounded-9" alt="Газ">
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="bg-image hover-zoom">
+                        <img src="images/gold.jpg" class="img-fluid w-100 rounded-9" alt="Золото">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="justify-content-around align-items-center my-4">
+            <div class="row text-center">
+                <div class="col-md-4 col-12">
+                    <img src="images/potassium.jpg" class="rounded-circle" style="width: 60px; height: 60px;" alt="Калий">
+                    <p>Калий - химический элемент 1-й группы (по устаревшей классификации — главной подгруппы первой группы, IA), ...</p>
+                </div>
+                <div class="col-md-4 col-12">
+                    <img src="images/cobalt.jpg" class="rounded-circle" style="width: 60px; height: 60px;" alt="Кобальт">
+                    <p>Кобальт - это серебристо-белый, слегка желтоватый переходный металл с розоватым или синеватым отливом.</p>
+                </div>
+                <div class="col-md-4 col-12">
+                    <img src="images/lead.jpg" class="rounded-circle" style="width: 60px; height: 60px;" alt="Свинец">
+                    <p>Свинец - токсичный металл природного происхождения, встречающийся в земной коре.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-lg-9 col-md-8">
+                <h2 class="text-center">Алмаз</h2>
+                <p class="text-justify">
+                    Алмазы, состоящие из углерода, кристаллизуются в кубическую решетку, что
+                    придает им уникальную жесткость и прочность. Они являются самым твердым
+                    естественным материалом на Земле, получившим оценку 10 по шкале Мооса.
+                    Благодаря этой твердости алмазы широко используются в промышленности для
+                    резки и сверления. Хотя большинство алмазов бесцветные, они могут иметь
+                    различные цвета, включая желтый, коричневый, синий, зеленый и даже
+                    розовый.
+                </p>
+            </div>
+            <div class="col-lg-3 col-md-4 d-flex align-items-center justify-content-center">
+                <img src="images/diamond.jpg" class="rounded-9 w-sm-80" alt="Картинка">
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-12">
+                <h2 class="text-center">Кобальт</h2>
+                <p class="text-justify">
+                    Кобальт — это химический элемент с символом Co и атомным номером 27. Он
+                    относится к переходным металлам и обладает высокой прочностью,
+                    устойчивостью к коррозии и отличной магнитной проницаемостью. Кобальт
+                    встречается в природе в виде различных минералов, таких как кобальтит и
+                    арсенопирит, и часто добывается в ассоциации с медью и никелем. Кобальт
+                    используется в различных отраслях, включая металлургию, электронику и
+                    производство аккумуляторов.
+                </p>
+            </div>
+        </div>
+
+
+
+        <footer class="d-flex justify-content-between bg-secondary text-light p-2">
+            <span>© Поляков А.В., Б9122-09.03.04, 2024-2025</span>
+            <span>✉ Контакты</span>
+        </footer>
+    </div>
+</body>
+
+</html>
