@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="styles.css" rel="stylesheet" type="text/css ">
+    <title>Calc</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Калькулятор трапеции</h2>
+
+        <div class="input-type">
+            <label>
+                <input type="radio" name="type" value="sides" checked> Основание, боковые стороны, высота
+            </label><br>
+            <label>
+                <input type="radio" name="type" value="angles"> Основание, высота, углы
+            </label><br>
+            <button onClick="selectForm()">Показать</button>
+        </div>
+
+        <div id="image-container">
+            <img alt="trapezoid image" src="images/image1.png" id="trapezoid-img">
+        </div>
+
+        <div id="inputs-sides">
+            <div class="input-group">
+                <label>Основание a:
+                    <input type="number" id="base1" min="0" max="200" onClick="clearErrorOnClick(this.id)">
+                </label>
+            </div>
+            <div class="input-group">
+                <label>Боковая сторона b:
+                    <input type="number" id="side1" min="0" max="200" onClick="clearErrorOnClick(this.id)">
+                </label>
+                <label>Боковая сторона c:
+                    <input type="number" id="side2" min="0" max="200" onClick="clearErrorOnClick(this.id)">
+                </label>
+            </div>
+            <div class="input-group">
+                <label>Высота h:
+                    <input type="number" id="height-sides" min="0" max="200" onClick="clearErrorOnClick(this.id)">
+                </label>
+            </div>
+        </div>
+
+        <div id="inputs-angles" class="hidden">
+            <div class="input-group">
+                <label>Основание a:
+                    <input type="number" id="base-a" min="0" max="200" onClick="clearErrorOnClick(this.id)">
+                </label>
+            </div>
+            <div class="input-group">
+                <label>Угол α:
+                    <input type="number" id="angle1" min="0" max="200" onClick="clearErrorOnClick(this.id)">
+                </label>
+                <label>Угол β:
+                    <input type="number" id="angle2" min="0" max="200" onClick="clearErrorOnClick(this.id)">
+                </label>
+            </div>
+            <div class="input-group">
+                <label>Высота h:
+                    <input type="number" id="height-angles" min="0" max="200" onClick="clearErrorOnClick(this.id)">
+                </label>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Выберите характеристики:<br>
+                <select id="calculations" onClick="clearErrorOnClick(this.id)" multiple>
+                    <option value="perimeter">Периметр</option>
+                    <option value="diagonals">Диагонали</option>
+                    <option value="area">Площадь</option>
+                </select>
+            </label>
+        </div>
+
+        <div>
+            <button onClick="calculate()">Вычислить</button>
+            <button onClick="clearInput()">Очистить</button>
+        </div>
+
+        <div id="results" class="results"></div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
