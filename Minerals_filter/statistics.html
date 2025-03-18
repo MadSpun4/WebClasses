@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Statistics</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts/data.js"></script>
+  <script src="scripts/table.js"></script>
+  <script src="scripts/filter.js"></script>
+  <script src="scripts/sort.js"></script>
+</head>
+<body>
+  <p>
+    <a href="index.html">Полезные ископаемые</a><br>
+    <a href="statistics.html">Список разных ископаемых</a>
+  </p><hr>
+  <div class="container">
+    <form id="filter">
+      <details>
+        <summary>Фильтр</summary>
+        <p>
+          <label for="name">Название:</label>
+          <input type="text" id="name">
+        </p><br>
+
+        <p>
+          <label for="aggregation">Агрегатное состояние:</label>
+          <select id="aggregation">
+            <option value="0" selected>Не выбрано</option>
+            <option value="твердое">Твердое</option>
+            <option value="жидкое">Жидкое</option>
+            <option value="газообразное">Газообразное</option>
+          </select>
+        </p><br>
+
+
+        <p>
+          <label for="densityFrom">Плотность (г/см³)</label>
+          от: <input type="number" id="densityFrom">
+          до: <input type="number" id="densityTo">
+        </p><br>
+
+        <p>
+          <label for="thermal_conductivityFrom">Теплопроводность (Вт/(м·К))</label>
+          от: <input type="number" id="thermal_conductivityFrom">
+          до: <input type="number" id="thermal_conductivityTo">
+        </p><br>
+
+        <p>
+          <label for="electrical_conductivityFrom">Электропроводность (См/м)</label>
+          от: <input type="number" id="electrical_conductivityFrom">
+          до: <input type="number" id="electrical_conductivityTo">
+        </p><br>
+
+        <p>
+          <label for="flammability">Горючесть:</label>
+          <select id="flammability">
+            <option value="0" selected>Не выбрано</option>
+            <option value="горючее">Горючее</option>
+            <option value="негорючее">Негорючее</option>
+          </select>
+        </p><br>
+
+        <p>
+          <label for="country">Страна добычи:</label>
+          <input type="text" id="country">
+        </p><br>
+
+        <input type="button" value="Найти">
+        <input type="button" value="Очистить фильтры">
+      </details>
+    </form>
+
+    <form id="sort">
+      <details>
+        <summary>Сортировка</summary>
+        <label for="fieldsFirst"></label>
+        <select id="fieldsFirst">
+          <option value="0">Нет</option>
+          <option value="1">Название</option>
+          <option value="2">Агрегатное состояние</option>
+          <option value="3">Плотность</option>
+          <option value="4">Теплопроводность</option>
+          <option value="5">Электропроводность</option>
+          <option value="6">Горючесть</option>
+          <option value="7">Страна</option>
+        </select>
+        по убыванию? <input type="checkbox" id="fieldsFirstDesc"><br>
+
+        <label for="fieldsSecond"></label>
+        <select id="fieldsSecond">
+          <option value="0">Нет</option>
+          <option value="1">Название</option>
+          <option value="2">Агрегатное состояние</option>
+          <option value="3">Плотность</option>
+          <option value="4">Теплопроводность</option>
+          <option value="5">Электропроводность</option>
+          <option value="6">Горючесть</option>
+          <option value="7">Страна</option>
+        </select>
+        по убыванию? <input type="checkbox" id="fieldsSecondDesc"><br>
+
+        <label for="fieldsThird"></label>
+        <select id="fieldsThird">
+          <option value="0">Нет</option>
+          <option value="1">Название</option>
+          <option value="2">Агрегатное состояние</option>
+          <option value="3">Плотность</option>
+          <option value="4">Теплопроводность</option>
+          <option value="5">Электропроводность</option>
+          <option value="6">Горючесть</option>
+          <option value="7">Страна</option>
+        </select>
+        по убыванию? <input type="checkbox" id="fieldsThirdDesc"><br>
+
+        <input type="button" value="Сортировать">
+        <input type="button" value="Сбросить сортировку">
+      </details>
+    </form>
+  </div>
+  <table id="list"></table>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
