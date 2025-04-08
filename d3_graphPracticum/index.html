@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Visualisation</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="http://d3js.org/d3.v7.min.js"> </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h3>Список самых высоких зданий</h3>
+        </div>
+
+        <div class="graph-control">
+            <div>
+                <label><strong>Значение по оси OX</strong></label><br>
+                <input type="radio" id="xCountry" name="xAxis" value="Страна" checked>
+                <label for="xCountry">Страна</label><br>
+
+                <input type="radio" id="xYear" name="xAxis" value="Год">
+                <label for="xYear">Год</label>
+            </div>
+            <div>
+                <label><strong>Значение по оси OY</strong></label><br>
+                <input type="checkbox" id="showMax" checked>
+                <label for="showMax">Максимальная высота</label><br>
+
+                <input type="checkbox" id="showMin">
+                <label for="showMin">Минимальная высота</label>
+            </div>
+            <div>
+                <label for="graphType"><strong>Тип графика</strong></label>
+                <select id="graphType">
+                    <option value="dotted">Точечная</option>
+                    <option value="histogram">Гистограмма</option>
+                </select>
+            </div>
+            <div>
+                <input type="button" id="drawGraphButton" value="Построить график">
+            </div>
+        </div>
+
+        <div class="graph-container">
+            <svg></svg>
+        </div>
+
+        <div class="control-container">
+            <input type="button" id="viewTableButton" value="Скрыть таблицу">
+        </div>
+    </div>
+    <table id="build"> </table>
+    <script src="JavaScript/data.js"></script>
+    <script src="JavaScript/table.js"></script>
+    <script src="JavaScript/chart.js"></script>
+    <script src="JavaScript/main.js"></script>
+</body>
+</html>
