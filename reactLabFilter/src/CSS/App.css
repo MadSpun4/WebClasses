@@ -1,0 +1,42 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+.hide {
+    display: none;
+}
+  
+.show {
+    display: table-row;
+}
+
+.pages span {
+    margin: 3px 8px;
+    cursor: pointer;
+}
+
+span.active-page {
+    color: blue;
+    font-weight: bold;
+}
